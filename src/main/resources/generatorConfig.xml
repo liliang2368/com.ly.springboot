@@ -15,13 +15,9 @@
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
 
-	<jdbcConnection
-		connectionURL="jdbc:mysql://10.1.235.125:33336/hn_b2b_common"
-				driverClass="com.mysql.jdbc.Driver"
-				userId="app"
-				password="6y7u8I9O">
-		<property name="serverTimezone" value="UTC"/>
-		<property name="nullCatalogMeansCurrent" value="true"/>
+<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://liyang/cnr-clouduser?useUnicode=true&amp;characterEncoding=UTF-8" 
+			userId="root" password="a">
 		</jdbcConnection>
 
 		<!-- 类型转换器 -->
@@ -39,7 +35,7 @@
 
 		<!-- java实体类配置 -->
 		<javaModelGenerator
-				targetPackage="com.yc.projects.yc74ibike.service.atom.dao.mapper.bo"
+				targetPackage="com.ai.cnr.apollo.service.atom.dao.mapper.bo"
 				targetProject="exportProject/src/main/java" />
 
 		<!-- sqlMap映射xml配置 -->
@@ -52,7 +48,7 @@
 				targetProject="exportProject/src/main/java"
 				type="XMLMAPPER" />
 <!-- store_pay_dtl_rpt    store_purchase_rpt -->  
-		  <table tableName="BS_DISTRICT" enableCountByExample="true"
+		  <table tableName="%" enableCountByExample="true"
                   enableUpdateByExample="true" enableDeleteByExample="true"
                   enableSelectByExample="true" selectByExampleQueryId="false" />
          <!-- <table tableName="MEM_BASE_HOBBY" enableCountByExample="true"
