@@ -23,4 +23,7 @@ spring:
         password: a
         driver-class-name: com.mysql.jdbc.Driver
         #配置外部静态资源路径 文件上传的路径
+mybatis:
+    mapper-locations: classpath:mapping/*.xml
+    type-aliases-package: com.yc.projects.yc74ibike.dao
 

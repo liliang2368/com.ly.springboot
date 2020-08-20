@@ -22,14 +22,15 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value="小辰出行单车信息操作接口",tags= {"单车信息","控制层"})
 public class BikeController {
 	
-	private Logger logger = LogManager.getLogger();
+	private Logger logger = LogManager.getLogger(BikeController.class);
 	@Autowired
 	private IUserBusisv iUserBusisv;
 
-	@ApiOperation(value = "门店采购订单报表组装数据接口", httpMethod = "POST")
+	@ApiOperation(value = "门店采购订单报表组装数据接口", httpMethod = "POST", consumes = "application/json")
 	@ApiResponse(code = 200, message = "success", response = String.class)
-	@GetMapping(value = "hello")
+	@PostMapping(value = "/v1.0/assemblyStoreOrderPurChaseRptData")
 	public  JsonModel open(@RequestBody User user) {
+		logger.info("接口入参数"+user);
 		JsonModel jsonModel=new JsonModel();
 		int result=iUserBusisv.insertUser(user);
 		jsonModel.setObj(jsonModel);

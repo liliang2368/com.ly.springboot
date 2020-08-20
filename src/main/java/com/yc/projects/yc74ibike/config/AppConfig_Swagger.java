@@ -28,7 +28,7 @@ public class AppConfig_Swagger {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.zx.qcdzh.web"))
+                .apis(RequestHandlerSelectors.basePackage("com.yc"))
                 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .paths(PathSelectors.any())
                 .build();
