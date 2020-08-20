@@ -11,15 +11,16 @@ server:
         buffers-per-region: 1024  
         direct-buffers: true 
 logging:
-    level: 
-        root: error
-        org.springframework: error
-        com.yc: info
-    file: /tmp/yc.log
+    level:
+        com:
+            yc: debug
 swagger: 
     enabled: true
- 
-
-
-
+spring:
+    datasource:
+        url: jdbc:mysql://liyang:3306/cnr-clouduser?useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: a
+        driver-class-name: com.mysql.jdbc.Driver
+        #配置外部静态资源路径 文件上传的路径
 
