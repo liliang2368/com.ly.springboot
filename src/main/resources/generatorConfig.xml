@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 数据库驱动 -->
+	<!-- <classPathEntry location="/Users/guchuanlong/opt/jdbc-libs/ojdbc7-12.1.0.2.jar" /> -->
+	<classPathEntry location="/Users/mac/maven/MavenRepository/MavenRepository/com/yc/drivers/mysql/5/mysql-5.jar" />
+	<context id="context1" targetRuntime="MyBatis3">
+		<!--  <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+                <property name="searchString" value="Example$"/>
+                <property name="replaceString" value="Criteria"/>
+            </plugin> -->
+		<!-- 禁用mybatis插件自动生成的注释 -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+	<jdbcConnection
+		connectionURL="jdbc:mysql://10.1.235.125:33336/hn_b2b_common"
+				driverClass="com.mysql.jdbc.Driver"
+				userId="app"
+				password="6y7u8I9O">
+		<property name="serverTimezone" value="UTC"/>
+		<property name="nullCatalogMeansCurrent" value="true"/>
+		</jdbcConnection>
+
+		<!-- 类型转换器 -->
+		<javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+			<!--
+                true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型
+                false：默认,
+                    scale>0;length>18：使用BigDecimal;
+                    scale=0;length[10,18]：使用Long；
+                    scale=0;length[5,9]：使用Integer；
+                    scale=0;length<5：使用Short；
+             -->
+			<property name="forceBigDecimals" value="false"/>
+		</javaTypeResolver>
+
+		<!-- java实体类配置 -->
+		<javaModelGenerator
+				targetPackage="com.yc.projects.yc74ibike.service.atom.dao.mapper.bo"
+				targetProject="exportProject/src/main/java" />
+
+		<!-- sqlMap映射xml配置 -->
+		<sqlMapGenerator
+				targetPackage="mybatis.mapper"
+				targetProject="exportProject/src/main/resources" />
+		<!-- mybatis接口类配置 -->
+		<javaClientGenerator
+				targetPackage="com.ai.cnr.apollo.service.atom.dao.mapper.interfaces"
+				targetProject="exportProject/src/main/java"
+				type="XMLMAPPER" />
+<!-- store_pay_dtl_rpt    store_purchase_rpt -->  
+		  <table tableName="BS_DISTRICT" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+         <!-- <table tableName="MEM_BASE_HOBBY" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="MEM_THRID_LOGIN" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="MEM_USER_ADDRESS" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="MEM_USER_CARD" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="MEM_USER_COU" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="MEM_USER_HOBBY" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="MEM_USER_INFO" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="MEM_USER_PRD" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="PRD_BASE_INFO" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="PRD_CATEGORY" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="PRD_COU_REL" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="PRD_FESTIVAL_GREETING" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="STORE_BASE_INFO" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+          <table tableName="SYS_RANDOM_REC" enableCountByExample="true"
+          <table tableName="MEM_USER_COU" enableCountByExample="true"
+                  enableUpdateByExample="true" enableDeleteByExample="true"
+                  enableSelectByExample="true" selectByExampleQueryId="false" />
+                  -->
+	</context>
+</generatorConfiguration>
